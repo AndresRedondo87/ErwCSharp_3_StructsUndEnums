@@ -62,10 +62,12 @@ namespace ErwCSharp_3_StructsUndEnums
             Console.WriteLine(fr == a);//true, a und fr sind beide Fr (friday)
             Console.WriteLine(Day.Mo);
             Console.WriteLine((int)Day.Mo); //0 Monday Enum as integer gecasted,zeigt 0...toll
+            Console.WriteLine();
+            Console.WriteLine();
 
             // "Herausforderung" erstelle ein Enum von Monaten.... DAS SOLL EIN WITZ SEIN!!
             Month monat = Month.Jan;
-            Console.WriteLine(monat);
+            //Console.WriteLine(monat);
             for (int i = 1; i < 13 ; i++)
             {
                 monat = (Month)i;
