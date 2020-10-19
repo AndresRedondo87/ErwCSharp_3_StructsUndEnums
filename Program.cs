@@ -21,6 +21,28 @@ namespace ErwCSharp_3_StructsUndEnums
             // DateTime :d für short date format
             //ausgeben, wird in methode umgepackt, mit this anstatt Instanzname (oder einfach leer lassen.
         }
+
+        //die Structs dürfen kein default Konstruktoren haben!!
+        //public Game()
+        //{
+
+        //}
+
+        //Sie dürfen Konstruktoren haben nur wenn sie ALLE Eigenschaften gesetzt werden
+        public Game( string name,string developer, double rating, DateTime releaseDate)
+        {
+            this.name = string.Empty;
+            this.developer = string.Empty;
+            this.rating = 0;
+            this.releaseDate = DateTime.Now;
+
+        }
+
+        // EINE KLASSE IST EIN POINTER TYPE, EIN STRUCT IST EIN VALUE TYPE.
+        // das heißt, dass ein Objekt  von eine Klasse immer auf ein Wert REFERENZIERT
+        // und ein Struct ist den Wert selber.
+        // https://www.lernmoment.de/csharp-programmieren/kombinierte-formatierung-fuer-konsole-datei/
+        // wieder nicht richtig erklärt...
     }
     class Program
     {
