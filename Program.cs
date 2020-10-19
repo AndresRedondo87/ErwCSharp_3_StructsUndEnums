@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ErwCSharp_3_StructsUndEnums
 {
-
+    //enums sind sammlung von Konstanten
+    enum Day { Mo,Tu,We,Th,Fr,Sa,Su }
+    // "Herausforderung" erstelle ein Enum von Monaten.... DAS SOLL EIN WITZ SEIN!!
+    enum Month { Jan =1,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec}
+    // so werden alle mmonate automatisch +1 sein und damit die richtige Monat-Zahl bekommen
+    // weitere änderungen werden so übernommen. wenn Mai anstatt 5 auf 25 setzen, dan wid Juni 26, Juli 27...
     struct Game
     {
         public string name;
@@ -48,6 +54,27 @@ namespace ErwCSharp_3_StructsUndEnums
     {
         static void Main(string[] args)
         {
+            //ENUMS
+            Day fr = Day.Fr;
+            Day su = Day.Su;
+            Day a = Day.Fr;
+            //Fr hat interner Wert 4,  Su, hat 6...  das  benötigen aber eigentlich nicht
+            Console.WriteLine(fr == a);//true, a und fr sind beide Fr (friday)
+            Console.WriteLine(Day.Mo);
+            Console.WriteLine((int)Day.Mo); //0 Monday Enum as integer gecasted,zeigt 0...toll
+
+            // "Herausforderung" erstelle ein Enum von Monaten.... DAS SOLL EIN WITZ SEIN!!
+            Month monat = Month.Jan;
+            Console.WriteLine(monat);
+            for (int i = 1; i < 13 ; i++)
+            {
+                monat = (Month)i;
+                Console.WriteLine(monat);  
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //STRUCTS
             Game game1;
             //einfache Deklaration
             
